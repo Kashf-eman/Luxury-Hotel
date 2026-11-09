@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury HOTEL</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="hero" id="home">
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="nav-logo">Luxury<span>HOTEL</span></div>
+            <ul class="nav-left" id="navMenu">
+                <li class="active"><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#booking" onclick="closeMenu()">Booking</a></li>
+                <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+
+            </ul>
+            <div class="nav-right">
+                <button class="login-btn" onclick="openPopup('loginPopup')">LOGIN</button>
+                <button class="signup-btn" onclick="openPopup('signupPopup')">SIGN UP</button>
+
+            </div>
+        </nav>
+        <div class="hero-text">
+            <p>WELCOME TO Luxury</p>
+            <h1>Experience Comfort<br>Like Never Before</h1>
+            <button class="btn-gold">BOOK YOUR STAY</button>
+        </div>
+        <div class="booking-bar">
+            <div class="book-item"><label>CHECK IN</label><input type="date"></div>
+            <div class="book-item"><label>CHECK OUT</label><input type="date"></div>
+            <div class="book-item"><label>GUESTS</label><select>
+                    <option>2 Adults</option>
+                    <option>1 Adult</option>
+                    <option>Family</option>
+                </select></div>
+            <div class="book-item"><label>ROOM TYPE</label><select>
+                    <option>Select Room</option>
+                    <option>Deluxe Room</option>
+                    <option>Suite Room</option>
+                </select></div>
+            <button class="check-btn">CHECK AVAILABILITY</button>
+        </div>
+    </section>
+    <!-- ===== POPUP HTML ===== -->
+
+    <!-- LOGIN POPUP -->
+    <div class="popup-overlay" id="loginPopup" onclick="if(event.target==this) closePopup('loginPopup')">
+        <div class="popup">
+            <span class="popup-close" onclick="closePopup('loginPopup')">×</span>
+            <div class="popup-logo">Luxury <span>HOTEL</span></div>
+            <h2>Welcome Back </h2>
+            <p>Login to book your luxury stay</p>
+            <input type="email" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <div class="popup-row"><label><input type="checkbox" style="width:auto;"> Remember me</label><a>Forgot
+                    Password?</a></div>
+            <button class="popup-btn" onclick="alert('Login Successful!'); closePopup('loginPopup')">LOGIN</button>
+            <div class="popup-divider">or continue with</div>
+            <button class="google-btn">Continue with Google</button>
+            <div class="switch-text">Don't have account? <b onclick="switchPopup('loginPopup','signupPopup')">Sign
+                    Up</b></div>
+        </div>
+    </div>
+
+    <!-- SIGNUP POPUP -->
+    <div class="popup-overlay" id="signupPopup" onclick="if(event.target==this) closePopup('signupPopup')">
+        <div class="popup">
+            <span class="popup-close" onclick="closePopup('signupPopup')">×</span>
+            <div class="popup-logo">Luxury <span>HOTEL</span></div>
+            <h2>Create Account</h2>
+            <p>Join Luxury for exclusive offers</p>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+            <input type="tel" placeholder="Phone Number">
+            <input type="password" placeholder="Create Password">
+            <button class="popup-btn" onclick="alert('Account Created!'); closePopup('signupPopup')">CREATE
+                ACCOUNT</button>
+            <div class="popup-divider">or continue with</div>
+            <button class="google-btn"> Continue with Google</button>
+            <div class="switch-text">Already have account? <b
+                    onclick="switchPopup('signupPopup','loginPopup')">Login</b></div>
+        </div>
+    </div>
+    
+    <section class="about" id="about">
+        <!-- LEFT TEXT -->
+        <div class="about-left">
+            <div class="tag">● ABOUT US</div>
+            <h2>Book Smart Stay Better<br>Travel Happier.</h2>
+            <p>Travel smarter with Luxury's easy booking, verified stays and secure payments. Enjoy handpicked hotels,
+                best prices and comfort wherever your journey takes you.</p>
+            <p>From luxury rooms to fine dining, we make every stay unforgettable with world-class service.</p>
+
+            <div class="about-features">
+                <div class="feature"><span>✓</span> Best Price Guarantee</div>
+                <div class="feature"><span>✓</span> 24/7 Support</div>
+            </div>
+
+            <div class="about-stats">
+                <div><b>250+</b><small>ROOMS</small></div>
+                <div><b>15+</b><small>YEARS</small></div>
+                <div><b>50k+</b><small>HAPPY GUESTS</small></div>
+            </div>
+
+            <button class="about-btn">READ MORE →</button>
+        </div>
+
+        <!-- RIGHT IMAGES -->
+        <div class="about-right">
+            <img class="img-big" src="img/abt.jpg">
+            <div class="img-small-box">
+                <img class="img-small" src="img/slider4.jpg">
+                <p style="font-size:12px;font-weight:600;margin-top:8px;">Bed Room <small
+                        style="color:#888;font-weight:400;">Amazing bed room with luxury</small></p>
+            </div>
+            <div class="exp-badge"><b>15+</b><small>Years Experience</small></div>
+        </div>
+    </section>
+    <section class="gallery-sec" id="gallery">
+        <div class="gallery-head">
+            <span>● OUR GALLERY</span>
+            <h2>Explore Our Hotel Gallery</h2>
+            <p>Rooms, Pool, Dining, Cinema - Our Beautiful places.</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <img class="g-tall" src="img/grid2.jpg">
+            <img class="g-small" src="img/grid6.jpg">
+            <img class="g-small" src="img/img8.jpg">
+            <img class="g-tall" src="img/img2.jpg">
+            <img class="g-small" src="img/grid3.jpg">
+            <img class="g-mid" src="img/hero.jpg">
+            <img class="g-tall" src="img/img4.jpg">
+            <img class="g-mid" src="img/grid1.jpg">
+            <img class="g-mid" src="img/img3.jpg">
+            <img class="g-small" src="img/sliider6.jpg">
+            <img class="g-mid" src="img/slider.jpg">
+            <img class="g-tall" src="img/slider5.jpg">
+        </div>
+    </section>
+
+    
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <button class="prev-btn" onclick="changeImage(-1)">❮</button>
+        <img id="lightboxImg" src="">
+        <button class="next-btn" onclick="changeImage(1)">❯</button>
+        <div class="counter" id="counter">1 / 10</div>
+    </div>
+    <section class="service-cards" id="services">
+        <div class="tag" id="ser">● Our Servives</div>
+        <h2>We Provide These Services</h2>
+        <div class="pic-grid">
+
+           
+            <div class="pic-text">
+                <div class="num">01</div>
+                <h3>Royal Home Bedrooms<br>and Suite Hotels.</h3>
+                <p>Enjoy fresh air, sunset view and calm deck with your family and friends. Perfect for relaxing
+                    evenings.</p>
+                <a class="see-link">See Product →</a>
+            </div>
+
+          
+            <div class="pic-img">
+                <img src="img/img1.jpg">
+                <span>Luxury Bedroom</span>
+            </div>
+
+           
+            <div class="pic-img">
+                <img src="img/img9.jpg">
+                <span>Infinity Pool</span>
+            </div>
+
+           
+            <div class="pic-text white">
+                <div class="num">02</div>
+                <h3>Scenic Infinity Pool<br>and Tranquil Deck.</h3>
+                <p>Private pool party area with lights, music and luxury seating. Enjoy your special moments in style.
+                </p>
+                <a class="see-link">See Product →</a>
+            </div>
+
+          
+            <div class="pic-text">
+                <div class="num">03</div>
+                <h3>Private Theater /<br>Cinema Hall.</h3>
+                <p>Big screen, Dolby sound and cozy seats - enjoy movies like a real cinema with your family.</p>
+                <a class="see-link">See Product →</a>
+            </div>
+
+            
+            <div class="pic-img">
+                <img src="img/img12.jpg">
+                <span>Private Cinema</span>
+            </div>
+
+            
+            <div class="pic-img">
+                <img src="img/img6.jpg">
+                <span>Fine Dining</span>
+            </div>
+
+           
+            <div class="pic-text white">
+                <div class="num">04</div>
+                <h3>Fine Dining Room<br>& Restaurant.</h3>
+                <p>Tasty Pakistani, Chinese and Continental food served fresh in a luxury dining hall.</p>
+                <a class="see-link">See Product →</a>
+            </div>
+
+        </div>
+    </section>
+    <section class="rooms-sec" id="booking">
+        <div class="tag">● OUR ROOMS</div>
+        <h2>Book Your Perfect Room</h2>
+        <p class="sub">Choose from our luxury rooms and suites for your comfortable stay</p>
+
+        <div class="slider-wrap">
+            <div class="slider-track" id="sliderTrack">
+
+                <div class="room-card">
+                    <img src="img/slider.jpg">
+                    <div class="room-card-body">
+                        <h3>Superior Suite</h3>
+                        <p>Spacious room with king bed, city view, free WiFi and breakfast included.</p>
+                        <div class="price"><b>$120 <small>/ night</small></b><button class="book-btn">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="img/slider1.jpg">
+                    <div class="room-card-body">
+                        <h3>Executive Room</h3>
+                        <p>Modern room with work desk, luxury bathroom and 24/7 room service.</p>
+                        <div class="price"><b>$150 <small>/ night</small></b><button class="book-btn">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="img/slider2.jpg">
+                    <div class="room-card-body">
+                        <h3>Grand Suite</h3>
+                        <p>Premium suite with living area, jacuzzi and beautiful sunset view.</p>
+                        <div class="price"><b>$220 <small>/ night</small></b><button class="book-btn">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="img/slider4.jpg">
+                    <div class="room-card-body">
+                        <h3>Deluxe Room</h3>
+                        <p>Cozy room with soft bed, smart TV and perfect for couples & family.</p>
+                        <div class="price"><b>$95 <small>/ night</small></b><button class="book-btn">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="img/slider5.jpg">
+                    <div class="room-card-body">
+                        <h3>Family Room</h3>
+                        <p>Big family room with 2 beds, kids area and full comfort for everyone.</p>
+                        <div class="price"><b>$180 <small>/ night</small></b><button class="book-btn">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="img/sliider6.jpg">
+                    <div class="room-card-body">
+                        <h3>Presidential Suite</h3>
+                        <p>Most luxury suite with private pool, butler service and VIP lounge.</p>
+                        <div class="price"><b>$350 <small>/ night</small></b><button class="book-btn">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slider-btns">
+            <button onclick="moveSlide(-1)">❮</button>
+            <button onclick="moveSlide(1)">❯</button>
+        </div>
+        <div class="dots" id="dots"></div>
+    </section>
+    
+    <section class="reviews-sec" id="reviews">
+        <div class="tag">● TESTIMONIALS</div>
+        <h2>Memorable Stays, Happy Guests</h2>
+        <div class="review-wrap">
+            <div class="review-track" id="reviewTrack">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"An absolutely amazing experience! The room was clean, staff was very friendly and food was
+                        delicious. I will definitely come again."</p>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200">
+                    <h4>Emily R.</h4><small>New York, USA</small>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The pool and breakfast were excellent. Very comfortable stay with my family. Best hotel in the
+                        city, highly recommended!"</p>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200">
+                    <h4>James T.</h4><small>London, UK</small>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"From check-in to check-out everything was perfect. Beautiful rooms, fast service and lovely
+                        view. Loved it!"</p>
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200">
+                    <h4>Sophia L.</h4><small>Dubai, UAE</small>
+                </div>
+            </div>
+        </div>
+        <div class="review-btns">
+            <button onclick="moveReview(-1)">❮</button>
+            <button onclick="moveReview(1)">❯</button>
+        </div>
+    </section>
+
+   
+    <div class="newsletter" id="contact">
+        <div>
+            <h3>Be the first to know</h3>
+            <p>Exclusive offers, new experiences, and more.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="showAlert('Thanks for subscribing!'); return false;">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit">SUBSCRIBE</button>
+        </form>
+    </div>
+
+   
+    <footer class="footer">
+        <div>
+            <div class="footer-logo">Luxury <span>HOTEL</span></div>
+            <p style="margin-top:10px;">Luxury, comfort and unforgettable stays in the heart of the city.</p>
+        </div>
+        <div>
+            <h4>EXPLORE</h4>
+            <ul>
+                <li>Rooms & Suites</li>
+                <li>Offers</li>
+                <li>Gallery</li>
+                <li>Reviews</li>
+            </ul>
+        </div>
+        <div>
+            <h4>INFORMATION</h4>
+            <ul>
+                <li>About Us</li>
+                <li>Blog</li>
+                <li>FAQs</li>
+                <li>Careers</li>
+            </ul>
+        </div>
+        <div>
+            <h4>GUEST SERVICES</h4>
+            <ul>
+                <li>FAQs</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>Support</li>
+            </ul>
+        </div>
+        <div>
+            <h4>CONTACT</h4>
+            <p> London , UK <br> +44 300 1234567<br>✉️ info@Luxury.com</p>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
